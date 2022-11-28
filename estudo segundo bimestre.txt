@@ -1,0 +1,454 @@
+exercicio 1
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+     float qw, salario, valor_qw, valor_total;
+     
+     printf("Qual é o valor do sálario minimo: ");
+     scanf("%f", &salario);
+     
+     printf("Quantos quilowatts foram gastos: ");
+     scanf("%f", &qw);
+     
+     valor_qw = (salario / 7) / 100;
+     
+     printf("O valor kw: %.2f\n", valor_qw);
+     printf("O valor total em reais é: %.2f", valor_qw * qw);
+    return 0;
+}
+
+exercicio 2
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+     
+     float combustivel, valor_total, litros, valor_des, valor_alc, valor_gas;
+     
+     printf("Entre com qual combustível vai ser abastecido [1] Álcool [2] Gasolina");
+     scanf("%f", &combustivel);
+     
+     printf("Quantos litros foram abastaecidos: ");
+     scanf("%f", &litros);
+     
+     if(combustivel == 1){
+         printf("Entre com o valor do álcool: ");
+         scanf("%f", &valor_alc);
+     }else{
+         printf("Entre com o valor da gasolina: ");
+         scanf("%f", &valor_gas);
+     }
+     
+     if(combustivel == 1){
+         if(litros <= 20){
+             valor_total = litros * valor_alc;
+             valor_des = valor_total - (0.03 * valor_total);
+             printf("O valor total é de: %.2f, o valor com desconto é: %.2f", valor_total, valor_des);
+         }else{
+            valor_total = litros * valor_alc;
+             valor_des = valor_total - (0.05 * valor_total);
+             printf("O valor total é de: %.2f, o valor com desconto é: %.2f", valor_total, valor_des);
+         }
+         
+     }
+     
+     if(combustivel == 2){
+         if(litros <= 15){
+             valor_total = litros * valor_gas;
+             valor_des = valor_total - (0.035 * valor_total);
+             printf("O valor total é de: %.2f, o valor com desconto é: %.2f", valor_total, valor_des);
+         }else{
+            valor_total = litros * valor_gas;
+             valor_des = valor_total - (0.06 * valor_total);
+             printf("O valor total é de: %.2f, o valor com desconto é: %.2f", valor_total, valor_des);
+         }
+     }
+    return 0;
+}
+
+exercico 3
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+     
+     float num1, num2, divi;
+     
+     
+    printf("Entre com o primeiro número: ");
+    scanf("%f", &num1);
+         
+    printf("Entre com o segundo número diferente de 0: ");
+    scanf("%f", &num2);
+    
+    while(num2 == 0){
+       printf("Entre com o segundo número diferente de 0: ");
+       scanf("%f", &num2); 
+    }
+    
+    divi = num1 / num2;
+    
+    printf("O valor da divisão é: %.2f", divi);
+     
+    return 0;
+}
+
+exercicio 4
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+     
+    int cont, n;
+    float soma;
+    
+    soma = 0;
+    
+    printf("Entre com um valor: ");
+    scanf("%d", &n);
+    
+    for(cont = 1; cont <= n; cont++){
+        printf("1 / %d\n", cont);
+        soma = soma + (1.0 / cont);
+    }
+     
+    printf("O valor da soma é: %.2f", soma);
+    return 0;
+}
+
+exercico 5
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    
+    int valor[10], cont, menor_valor, maior_valor, indice_menor, indice_maior;
+    
+    printf("Entre com o valor[0]: ");
+    scanf("%d", &valor[0]);
+    maior_valor = valor[0];
+    indice_maior = 0;
+    menor_valor = valor[0];
+    indice_menor = 0;
+    
+    for(cont = 1; cont < 10; cont++){
+        printf("Entre com o valor[%d]: ", cont);
+        scanf("%d", &valor[cont]);
+    }
+    
+    for(cont = 0; cont < 10; cont++){
+        if(valor[cont] > maior_valor){
+            maior_valor = valor[cont];
+            indice_maior = cont;
+        }
+        if(valor[cont] < menor_valor){
+            menor_valor = valor[cont];
+            indice_menor = cont;
+        }
+    }
+
+    printf("O maior valor é: %d no indice: %d\n", maior_valor, indice_maior);
+    printf("O menor valor é: %d no indice: %d", menor_valor, indice_menor);
+    return 0;
+}
+
+exercicio 6
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    
+    int valor[20] = {1,1,3,4,2,6,1,4,3,4,5,6,2,1,2,4,5,3,2,1}, cont, resultados[6] = {0,0,0,0,0,0};
+    
+    
+    for(cont = 0; cont < 20; cont++){
+        resultados[valor[cont] - 1] ++;
+    }
+    
+    for(cont = 0; cont < 6; cont++){
+        printf("\nFace %d: %d vezes", cont + 1, resultados[cont]);
+    }
+    return 0;
+}
+
+exercicio 7
+
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    
+    int matriz[4][3] = {{1,2,3}, {4,5,6}, {7,8,9}, {10,11,12}}, cont1, cont2, valor;
+    bool  existe = false;
+    
+    printf("Entre com um valor: ");
+    scanf("%d", &valor);
+    
+    for(cont1 = 0; cont1 < 5; cont1++){
+        for(cont2 = 0; cont2 < 4; cont2 ++){
+            if(valor == matriz[cont1][cont2]){
+                printf("O valor existe no indice da matriz[%d][%d]", cont1, cont2);
+            }
+        }
+    }
+    return 0;
+}
+
+
+exercicio 8
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+
+int main() {
+    
+    int matriz[4][4] = {{1,2,3,4}, {4,5,6,6}, {7,8,9,9}, {10,11,12,12}}, cont1, cont2, valor;
+    
+    valor = 0;
+    
+    for(cont1 = 0; cont1 < 3; cont1++){
+        for(cont2 = 0; cont2 < 4; cont2 ++){
+            if(cont1 < cont2){
+                valor =  valor + matriz[cont1][cont2];
+            }
+        }
+    }
+    
+    printf("A soma é: %d", valor);
+    return 0;
+}
+
+exercicio 9
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+
+int main() {
+    
+    char str[101], str_result[101];
+    int cont, pos;
+    
+    pos = 0;
+    
+    printf("Informe a string: ");
+    scanf(" %100[^\n]", str);
+    
+    for(cont = 0; str[cont] != '\0'; cont++){
+        if(str[cont] != ' '){
+            str_result[pos] = str[cont];
+            pos ++;
+        }
+    }
+    
+    str_result[pos] = '\0';
+    printf("String resultado é: %s", str_result);
+    return 0;
+}
+
+exercicio 10
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char str[30], l1, l2;
+    int cont;
+    
+    printf("Entre com a string: ");
+    scanf(" %31[^\n]", str);
+    
+    printf("Entre com a letra a ser encontrada: ");
+    scanf(" %c", &l1);
+    
+    printf("Entre com a letra a ser trocada: ");
+    scanf(" %c", &l2);
+    
+    for(cont = 0; str[cont] != '\0'; cont++){
+        if(str[cont] == l1){
+            str[cont] = l2;
+        }
+    }
+    
+    printf("A string é: %s", str);
+
+    return 0;
+}
+
+exercicio 11
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int func_soma(int num){
+    
+    int cont, soma;
+    
+    soma = 0;
+    
+    for(cont = 0; cont <= num; cont ++){
+        soma = soma + cont;
+    }
+    
+    printf("O valor da soma é: %d", soma);
+}
+
+int main() {
+    
+    int n;
+    
+    printf("Entre com o valor de n: ");
+    scanf("%d", &n);
+    
+    func_soma(n);
+
+    return 0;
+}
+
+exercico 12
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void str(char l1[30], char l2[30]){
+    
+    if(strcmp (l1, l2) == 0){
+        printf("As string são iguais");
+    }else{
+        printf("As string são diferentes");
+    }
+    
+}
+
+int main() {
+    
+    char str1[30], str2[30];
+    
+    printf("Entre com a primeira string: ");
+    scanf(" %31[^\n]", str1);
+    
+    printf("Entre com a segunda string: ");
+    scanf(" %31[^\n]", str2);
+    
+    str(str1, str2);
+
+    return 0;
+}
+
+exercicio 13
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+typedef struct{
+    char nome[30], cidade[30];
+    int idade;
+}Info_aluno;
+
+int main() {
+    
+    Info_aluno aluno;
+    
+    printf("Entre com o nome do aluno: ");
+    scanf(" %31[^\n]", aluno.nome);
+    
+    printf("Entre com a idade do aluno: ");
+    scanf("%d", &aluno.idade);
+    
+    printf("Entre com a cidade do aluno: ");
+    scanf(" %31[^\n]", aluno.cidade);
+    
+    printf("O nome do aluno é: %s\n", aluno.nome);
+    printf("A idade do aluno é: %d\n", aluno.idade);
+    printf("A cidade do aluno pe: %s\n", aluno.cidade);
+    
+
+    return 0;
+}
+
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+typedef struct{
+    char nome[31], disciplina[31];
+    float n1, n2;
+}Aluno_disciplina;
+
+int main() {
+    
+    Aluno_disciplina aluno[3];
+    float media;
+    int cont;
+    
+    media = 0;
+    
+    for(cont = 0; cont < 3; cont++){
+        printf("Entre com o nome do aluno[%d]: ", cont + 1);
+        scanf(" %31[^\n]", aluno[cont].nome);
+        
+        printf("Entre com a disciplina do aluno[%d]", cont + 1);
+        scanf(" %31[^\n]", aluno[cont].disciplina);
+        
+        printf("Entre com a nota 1 do aluno[%d]", cont + 1);
+        scanf("%f", &aluno[cont].n1);
+        
+        printf("Entre com a nota 2 do aluno[%d]", cont + 1);
+        scanf("%f", &aluno[cont].n2);
+        
+        
+    }
+    
+    for(cont = 0; cont < 3; cont++){
+        media = (aluno[cont].n1 + aluno[cont].n2) / 2;
+        
+        if(media > 6){
+            printf("%s\n", aluno[cont].nome);
+            printf("%s\n", aluno[cont].disciplina);
+            printf("%.2f\n", media);
+            printf("Aprovado\n");
+        }else{
+            printf("%s\n", aluno[cont].nome);
+            printf("%s\n", aluno[cont].disciplina);
+            printf("%.2f\n", media);
+            printf("Reprovado\n");
+        }
+    }
+    
+    
+    
+    
+
+    return 0;
+}
+
+
+exercico 13
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+
+
+int main() {
+    
+    int matriz[5][5] = {{1,2,3,4,5}, {6,7,8,9,10}, {11,12,13,14,15}, {16,17,18,19,20}, {21,22,23,24,25}}, cont1, cont2, soma;
+    
+    soma = 0;
+    
+    for(cont1 = 0; cont1 < 5; cont1++){
+            soma = soma + matriz[cont1][4 - cont1];
+    }
+    
+printf("A soma foi de %d", soma);
+    return 0;
+}
